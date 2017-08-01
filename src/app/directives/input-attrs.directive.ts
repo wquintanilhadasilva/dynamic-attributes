@@ -8,9 +8,10 @@ import { AttributeService } from './../services/attribute.service';
 export class InputAttrsDirective {
 
   constructor(el: ElementRef, service: AttributeService) {
-    console.log(el);
+    /**
+     * Adiciona os atributos ao elemento passado como referência
+     */
     service.getAttributes().forEach( (a: IAttribute) => {
-      console.log(a);
       el.nativeElement.setAttribute(a.attribName, a.attribValue);
     });
 
